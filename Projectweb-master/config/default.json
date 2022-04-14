@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://xrl001:blackd000@university.1qzbh.mongodb.net/Greenwich?retryWrites=true&w=majority",
+    "jwtSecret": "secret",
+    "githubToken": "<yoursecrectaccesstoken>"
+  }
