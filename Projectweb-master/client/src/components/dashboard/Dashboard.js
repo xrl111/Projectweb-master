@@ -36,6 +36,24 @@ const P1 = styled.p`
   font-size: 20px;
   padding: 0px 5px 5px 5px; //trlb
 `
+const Main = styled.section`
+  display: flex;
+`
+const Mid = styled.div`
+  flex-direction: column;
+  flex: 6;
+  width: 100%;
+  margin: 20px;
+`
+const Left = styled.div`
+  display: flex;
+  flex: 2;
+`
+const Right = styled.div`
+  display: flex;
+  flex: 2;
+`
+
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
@@ -47,31 +65,40 @@ const Dashboard = ({
   }, [getCurrentProfile])
 
   return (
-    <section className="container">
-      <H1>Dashboard</H1>
-      <P>
-        <PersonIcon sx={{ fontSize: 30 }} />
-        Welcome {user && user.name}
-      </P>
-      {profile !== null ? (
-        <>
-          <DashboardActions />
-          <Experience experience={profile.experience} />
-          <Education education={profile.education} />
+    <>
+      <Main>
+        <Left></Left>
+        <Mid>
+          <H1>Dashboard</H1>
+          <P>
+            <PersonIcon sx={{ fontSize: 30 }} />
+            Welcome {user && user.name}
+          </P>
+          {profile !== null ? (
+            <>
+              <DashboardActions />
+              <Experience experience={profile.experience} />
+              <Education education={profile.education} />
 
-          <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i className="fas fa-user-minus" /> Delete My Account
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <P1>You have not yet setup a profile, please add some info</P1>
-          <ButtonLink to="/create-profile">Create Profile</ButtonLink>
-        </>
-      )}
-    </section>
+              <div className="my-2">
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteAccount()}
+                >
+                  <i className="fas fa-user-minus" /> Delete My Account
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <P1>You have not yet setup a profile, please add some info</P1>
+              <ButtonLink to="/create-profile">Create Profile</ButtonLink>
+            </>
+          )}
+        </Mid>
+        <Right></Right>
+      </Main>
+    </>
   )
 }
 
