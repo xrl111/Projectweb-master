@@ -7,7 +7,7 @@ import Experience from "./Experience"
 import Education from "./Education"
 import { getCurrentProfile, deleteAccount } from "../../actions/profile"
 import styled from "styled-components"
-
+import PersonIcon from "@mui/icons-material/Person"
 const ButtonLink = styled(Link)`
   color: #e1e9fc;
   align-items: center;
@@ -19,9 +19,22 @@ const ButtonLink = styled(Link)`
   display: flex;
   width: 150px;
   background-color: #1e88e5;
+  align-items: center;
+  justify-content: center;
 `
 const H1 = styled.h1`
   color: #1e88e5;
+  font-size: 30px;
+`
+const P = styled.p`
+  padding: 5px;
+  display: flex;
+  font-size: 20px;
+`
+const P1 = styled.p`
+  display: flex;
+  font-size: 20px;
+  padding: 0px 5px 5px 5px; //trlb
 `
 const Dashboard = ({
   getCurrentProfile,
@@ -36,9 +49,10 @@ const Dashboard = ({
   return (
     <section className="container">
       <H1>Dashboard</H1>
-      <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.name}
-      </p>
+      <P>
+        <PersonIcon sx={{ fontSize: 30 }} />
+        Welcome {user && user.name}
+      </P>
       {profile !== null ? (
         <>
           <DashboardActions />
@@ -53,7 +67,7 @@ const Dashboard = ({
         </>
       ) : (
         <>
-          <p>You have not yet setup a profile, please add some info</p>
+          <P1>You have not yet setup a profile, please add some info</P1>
           <ButtonLink to="/create-profile">Create Profile</ButtonLink>
         </>
       )}
