@@ -69,7 +69,7 @@ const Dashboard = ({
       <Main>
         <Left></Left>
         <Mid>
-          <H1>Dashboard</H1>
+          <H1>Personal Profile</H1>
           <P>
             <PersonIcon sx={{ fontSize: 30 }} />
             Welcome {user && user.name}

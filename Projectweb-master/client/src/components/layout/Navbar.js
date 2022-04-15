@@ -5,14 +5,14 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 import { logout } from "../../actions/auth"
 import styled from "styled-components"
-import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp"
+// import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp"
 import HomeIcon from "@mui/icons-material/Home"
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline"
-import LightbulbIcon from "@mui/icons-material/Lightbulb"
+// import LightbulbIcon from "@mui/icons-material/Lightbulb"
 import CategoryIcon from "@mui/icons-material/Category"
-import ManageAccountsIcon from "@mui/icons-material/ManageAccounts"
+// import ManageAccountsIcon from "@mui/icons-material/ManageAccounts"
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled"
-import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize"
+// import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize"
 import CloseSharpIcon from "@mui/icons-material/CloseSharp"
 import MenuIcon from "@mui/icons-material/Menu"
 import CodeIcon from "@mui/icons-material/Code"
@@ -103,29 +103,29 @@ const NavLogo = styled.div`
 const Blogo = styled(Link)`
   color: #f4f4f4;
 `
-const LoginIcon1 = styled.span`
-  color: white; //trbl
-  text-decoration: none;
-`
-const LoginLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-`
-const LoginF = styled.div`
-  display: flex;
-  margin: 10px 0px 10px 0px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
-const UserName = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-  font-size: 20px;
-  margin-top: 10px;
-`
+// const LoginIcon1 = styled.span`
+//   color: white; //trbl
+//   text-decoration: none;
+// `
+// const LoginLink = styled(Link)`
+//   display: flex;
+//   flex-direction: column;
+// `
+// const LoginF = styled.div`
+//   display: flex;
+//   margin: 10px 0px 10px 0px;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// `
+// const UserName = styled.span`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   color: white;
+//   font-size: 20px;
+//   margin-top: 10px;
+// `
 const A = styled.span`
   display: flex;
   color: #e1e9fc;
@@ -151,10 +151,6 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <PersonIcon />
         <SidebarLabel>Profiles</SidebarLabel>
       </SidebarLink>
-      <A onClick={logout} href="#!">
-        <LogoutIcon />
-        <SidebarLabel>Logout</SidebarLabel>
-      </A>
 
       <SidebarLink to="/profiles">
         <CodeIcon />
@@ -169,22 +165,22 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <HomeIcon />
         <SidebarLabel>Home</SidebarLabel>
       </SidebarLink>
-      <SidebarLink to="/Loginin">
+      <SidebarLink to="/register">
         <ModeEditOutlineIcon />
         <SidebarLabel>Register</SidebarLabel>
       </SidebarLink>
-      <SidebarLink to="/NewIdea">
+      {/* <SidebarLink to="/NewIdea">
         <LightbulbIcon />
         <SidebarLabel>NewIdea</SidebarLabel>
-      </SidebarLink>
+      </SidebarLink> */}
       <SidebarLink to="/Category">
         <CategoryIcon />
         <SidebarLabel>Category</SidebarLabel>
       </SidebarLink>
-      <SidebarLink to="/Manage">
+      {/* <SidebarLink to="/Manage">
         <ManageAccountsIcon />
         <SidebarLabel>Manage</SidebarLabel>
-      </SidebarLink>
+      </SidebarLink> */}
       <SidebarLink to="/Date">
         <AccessTimeFilledIcon />
         <SidebarLabel>Date</SidebarLabel>
@@ -193,6 +189,10 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
             <DashboardCustomizeIcon />
             <SidebarLabel>DashBoard</SidebarLabel>
           </SidebarLink> */}
+      <A onClick={logout} href="#!">
+        <LogoutIcon />
+        <SidebarLabel>Logout</SidebarLabel>
+      </A>
     </>
   )
 
