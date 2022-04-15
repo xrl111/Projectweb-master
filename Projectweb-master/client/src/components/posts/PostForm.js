@@ -3,19 +3,22 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { addPost } from "../../actions/post"
 import styled from "styled-components"
+
 const Main = styled.section`
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 `
 
 const Form = styled.form`
   width: 100%;
   height: 60px;
   display: flex;
+  /* flex-direction: column; */
 `
 const Button = styled.input`
-  width: 20%;
-  height: 50px;
+  width: 90px;
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -23,8 +26,11 @@ const Button = styled.input`
   font-size: 15px;
   color: white;
   background-color: #1775ee;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin: 15px;
+  cursor: pointer;
+
+  display: flex;
+  margin: 5px;
 `
 const Textarea = styled.textarea`
   width: 100%;
@@ -68,6 +74,18 @@ const PostForm = ({ addPost }) => {
             onChange={(e) => setText(e.target.value)}
             required
           />
+
+          {/* <TextareaAutosize
+            name="text"
+            cols="10"
+            aria-label="minimum height"
+            minRows={7}
+            placeholder="Create a post"
+            style={{ width: "100%", overflow: scroll }}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            required
+          /> */}
 
           <Button type="submit" value="Submit" />
         </Form>

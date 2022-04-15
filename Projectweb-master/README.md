@@ -272,7 +272,6 @@ right of the screen.
 npm install
 npm install npm@latest -g
 ```
-
 ### Install client dependencies
 
 ```bash

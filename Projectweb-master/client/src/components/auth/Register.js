@@ -1,100 +1,107 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
-import { setAlert } from '../../actions/alert';
-import { register } from '../../actions/auth';
-import PropTypes from 'prop-types';
-
+import React, { useState } from "react"
+import { connect } from "react-redux"
+import { Link, Navigate } from "react-router-dom"
+import { setAlert } from "../../actions/alert"
+import { register } from "../../actions/auth"
+import PropTypes from "prop-types"
+import {
+  H1,
+  Form,
+  FormLog,
+  Input,
+  Button,
+  Input1,
+  P,
+  Label,
+} from "./Registerstyle"
+import PersonIcon from "@mui/icons-material/Person"
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: ''
-  });
+    name: "",
+    email: "",
+    password: "",
+    password2: "",
+  })
 
-  const { name, email, password, password2 } = formData;
+  const { name, email, password, password2 } = formData
 
   const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value })
 
   const onSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (password !== password2) {
-      setAlert('Passwords do not match', 'danger');
+      setAlert("Passwords do not match", "danger")
     } else {
-      register({ name, email, password });
+      register({ name, email, password })
     }
-  };
+  }
 
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/dashboard" />
   }
 
   return (
-    <section className="container">
-      <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Create Your Account
-      </p>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            value={password2}
-            onChange={onChange}
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
-      </form>
-      <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
-      </p>
-    </section>
-  );
-};
+    <FormLog>
+      <Form onSubmit={onSubmit}>
+        <H1>Sign Up</H1>
+        <P>
+          <PersonIcon sx={{ fontSize: 30 }} /> Create New Account
+        </P>
+        <Label>Name</Label>
+        <Input
+          type="text"
+          placeholder="Name"
+          name="name"
+          value={name}
+          onChange={onChange}
+        />
+        <Label>Email</Label>
+        <Input
+          type="email"
+          placeholder="Email Address"
+          name="email"
+          value={email}
+          onChange={onChange}
+        />
+        <small className="form-text">
+          This site uses Gravatar so if you want a profile image, use a Gravatar
+          email
+        </small>
+        <Label>Password</Label>
+        <Input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={password}
+          onChange={onChange}
+        />
+        <Label>Confirm Password</Label>
+        <Input
+          type="password"
+          placeholder="Confirm Password"
+          name="password2"
+          value={password2}
+          onChange={onChange}
+        />
+
+        <Button type="submit" value="Register" />
+        {/* <p className="my-1">
+          Already have an account? <Link to="/login">Sign In</Link>
+        </p> */}
+      </Form>
+    </FormLog>
+  )
+}
 
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
-};
+  isAuthenticated: PropTypes.bool,
+}
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated
-});
+  isAuthenticated: state.auth.isAuthenticated,
+})
 
-export default connect(mapStateToProps, { setAlert, register })(Register);
+export default connect(mapStateToProps, { setAlert, register })(Register)
