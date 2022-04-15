@@ -270,6 +270,7 @@ right of the screen.
 
 ```bash
 npm install
+npm install npm@latest -g
 ```
 
 ### Install client dependencies
@@ -277,6 +278,7 @@ npm install
 ```bash
 cd client
 npm install
+npm install npm@latest -g
 ```
 
 ### Run both Express & React from root

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
+const  Nodemailer = require('../../middleware/sendingEmail');
 
 const Post = require('../../models/Post');
 const User = require('../../models/User');
@@ -33,6 +34,13 @@ router.post(
       const post = await newPost.save();
 
       res.json(post);
+      await Nodemailer(user.email)
+      .then((result) => {
+        console.log("Email sent...", result);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server Error');
