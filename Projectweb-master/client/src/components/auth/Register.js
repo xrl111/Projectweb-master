@@ -46,7 +46,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       <Form onSubmit={onSubmit}>
         <H1>Sign Up</H1>
         <P>
-          <PersonIcon sx={{ fontSize: 30 }} /> Sign Into Your Account
+          <PersonIcon sx={{ fontSize: 30 }} /> Create New Account
         </P>
         <Label>Name</Label>
         <Input

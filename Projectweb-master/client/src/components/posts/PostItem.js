@@ -26,7 +26,8 @@ const H4 = styled.h4`
   padding: 5px;
 `
 const Combtn = styled(Link)`
-  width: 100px;
+  width: 115px;
+
   height: 40px;
   padding: 10px;
   border: none;
@@ -34,14 +35,13 @@ const Combtn = styled(Link)`
   font-size: 15px;
   color: white;
   background-color: #1775ee;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-left: 10px;
+
+  margin: 10px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   :hover {
-    background-color: #9e9e9e;
+    background-color: #01579b;
   }
 `
 const Deletebtn = styled.button`
@@ -52,16 +52,14 @@ const Deletebtn = styled.button`
   font-weight: bold;
   font-size: 15px;
   color: white;
-  background-color: red;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-left: 10px;
+  background-color: #dd2c00;
+  margin: 10px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   /* display: flex; */
   :hover {
-    background-color: #9e9e9e;
+    background-color: #ff3d00;
   }
 `
 const ButtonLike = styled.button`
@@ -73,6 +71,7 @@ const ButtonLike = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background-color: #f4f4f4;
   cursor: pointer;
   :hover {
     background-color: #9e9e9e;
@@ -117,10 +116,7 @@ const PostItem = ({
               <ThumbDownAltIcon />
             </ButtonLike>
             <Combtn to={`/posts/${_id}`}>
-              Comment{" "}
-              {comments.length > 0 && (
-                <span className="comment-count">{comments.length}</span>
-              )}
+              Comments {comments.length > 0 && <span>{comments.length}</span>}
             </Combtn>
             {!auth.loading && user === auth.user._id && (
               <Deletebtn onClick={() => deletePost(_id)} type="button">

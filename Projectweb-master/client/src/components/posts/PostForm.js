@@ -17,8 +17,8 @@ const Form = styled.form`
   /* flex-direction: column; */
 `
 const Button = styled.input`
-  width: 100px;
-  height: 30px;
+  width: 90px;
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -28,9 +28,9 @@ const Button = styled.input`
   background-color: #1775ee;
   margin: 15px;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
+
   display: flex;
+  margin: 5px;
 `
 const Textarea = styled.textarea`
   width: 100%;
