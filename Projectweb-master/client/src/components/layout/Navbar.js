@@ -20,6 +20,7 @@ import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice"
 import PersonIcon from "@mui/icons-material/Person"
 import LoginIcon from "@mui/icons-material/Login"
 import LogoutIcon from "@mui/icons-material/Logout"
+import SmartToyIcon from "@mui/icons-material/SmartToy"
 const Nav = styled.div`
   background: #4267b2;
   height: 60px;
@@ -51,6 +52,7 @@ const Button = styled.button`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 `
 const CloseIcon = styled.a`
   margin-top: 2rem;
@@ -97,11 +99,14 @@ const NavLogo = styled.div`
   flex: 4;
   display: flex;
   align-items: right;
-  justify-content: space-around;
+  margin-left: 10px;
   color: white;
 `
 const Blogo = styled(Link)`
   color: #f4f4f4;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `
 // const LoginIcon1 = styled.span`
 //   color: white; //trbl
@@ -141,6 +146,7 @@ const A = styled.span`
     cursor: pointer;
   }
 `
+const H1 = styled.h1``
 const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const [sidebar, setSidebar] = useState(false)
 
@@ -220,12 +226,16 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
           <Button onClick={showSidebar}>
             <MenuIcon color="primary" fontSize="large" />
           </Button>
+          <NavLogo>
+            <H1>
+              <Blogo to="/">
+                Green And Blue
+                <SmartToyIcon sx={{ fontSize: 35 }} />
+              </Blogo>
+            </H1>
+          </NavLogo>
         </NavLeft>
-        <NavLogo>
-          <h1>
-            <Blogo to="/">GreenWich</Blogo>
-          </h1>
-        </NavLogo>
+
         <NavRight></NavRight>
       </Nav>
       <SidebarNav sidebar={sidebar}>
