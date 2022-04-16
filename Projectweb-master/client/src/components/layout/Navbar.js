@@ -10,9 +10,9 @@ import HomeIcon from "@mui/icons-material/Home"
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline"
 // import LightbulbIcon from "@mui/icons-material/Lightbulb"
 import CategoryIcon from "@mui/icons-material/Category"
-// import ManageAccountsIcon from "@mui/icons-material/ManageAccounts"
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts"
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled"
-// import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize"
+import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize"
 import CloseSharpIcon from "@mui/icons-material/CloseSharp"
 import MenuIcon from "@mui/icons-material/Menu"
 import CodeIcon from "@mui/icons-material/Code"
@@ -167,11 +167,11 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <SidebarLabel>Posts</SidebarLabel>
       </SidebarLink>
 
-      <SidebarLink to="/Home">
+      {/* <SidebarLink to="/Home">
         <HomeIcon />
         <SidebarLabel>Home</SidebarLabel>
-      </SidebarLink>
-      <SidebarLink to="/register">
+      </SidebarLink> */}
+      <SidebarLink to="/Register">
         <ModeEditOutlineIcon />
         <SidebarLabel>Register</SidebarLabel>
       </SidebarLink>
@@ -183,18 +183,18 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <CategoryIcon />
         <SidebarLabel>Category</SidebarLabel>
       </SidebarLink>
-      {/* <SidebarLink to="/Manage">
+      <SidebarLink to="/Manage">
         <ManageAccountsIcon />
         <SidebarLabel>Manage</SidebarLabel>
-      </SidebarLink> */}
+      </SidebarLink>
       <SidebarLink to="/Date">
         <AccessTimeFilledIcon />
         <SidebarLabel>Date</SidebarLabel>
       </SidebarLink>
-      {/* <SidebarLink to="/DashBoard">
-            <DashboardCustomizeIcon />
-            <SidebarLabel>DashBoard</SidebarLabel>
-          </SidebarLink> */}
+      <SidebarLink to="/Dashboardtable">
+        <DashboardCustomizeIcon />
+        <SidebarLabel>DashBoard</SidebarLabel>
+      </SidebarLink>
       <A onClick={logout} href="#!">
         <LogoutIcon />
         <SidebarLabel>Logout</SidebarLabel>
