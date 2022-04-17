@@ -25,11 +25,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       setAlert("Passwords do not match", "danger")
     } else {
       register({ name, email, password })
+      alert("Submit success")
     }
   }
 
   // if (isAuthenticated) {
-  //   return <Navigate to="/dashboard" />
+  //   // return <Navigate to="/dashboard" />
+  //   alert("Submit success")
   // }
 
   return (
