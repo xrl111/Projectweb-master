@@ -17,7 +17,7 @@ const Form = styled.form`
   /* flex-direction: column; */
 `
 const Button = styled.input`
-  width: 75px;
+  width: 100px;
   height: 40px;
   padding: 10px;
   border: none;
@@ -47,6 +47,27 @@ const H3 = styled.h3`
   color: #f4f4f4;
   margin-left: 5px;
 `
+const Anonymous = styled.input`
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  background-color: #1775ee;
+  margin: 15px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 5px;
+  :hover {
+    background-color: #80d8ff;
+  }
+`
+const Btn = styled.div``
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("")
 
@@ -90,8 +111,10 @@ const PostForm = ({ addPost }) => {
             onChange={(e) => setText(e.target.value)}
             required
           /> */}
-
-          <Button type="submit" value="Submit" />
+          <Btn>
+            <Button type="submit" value="Submit" />
+            <Anonymous type="submit" value="Anomymus" />
+          </Btn>
         </Form>
 
         {/* <Right></Right> */}

@@ -1,19 +1,10 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
-import { Link, Navigate } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { setAlert } from "../../actions/alert"
 import { register } from "../../actions/auth"
 import PropTypes from "prop-types"
-import {
-  H1,
-  Form,
-  FormLog,
-  Input,
-  Button,
-  Input1,
-  P,
-  Label,
-} from "./Registerstyle"
+import { H1, Form, FormLog, Input, Button, P, Label } from "./Registerstyle"
 import PersonIcon from "@mui/icons-material/Person"
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({

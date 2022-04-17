@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { addComment } from "../../actions/post"
 import styled from "styled-components"
-const Main = styled.div``
+// const Main = styled.div``
 const Head = styled.div`
   background-color: #1775ee;
 `

@@ -14,11 +14,11 @@ const Main = styled.div`
   height: 80vh;
   background-size: cover;
 `
-const Label = styled.label`
-  font-size: 15px;
-  color: gray;
-`
-const Input = styled.input``
+// const Label = styled.label`
+//   font-size: 15px;
+//   color: gray;
+// `
+// const Input = styled.input``
 const H1 = styled.h1`
   justify-content: center;
   align-items: center;
