@@ -171,7 +171,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <HomeIcon />
         <SidebarLabel>Home</SidebarLabel>
       </SidebarLink> */}
-      <SidebarLink to="/Register">
+      <SidebarLink to="/Register1">
         <ModeEditOutlineIcon />
         <SidebarLabel>Register</SidebarLabel>
       </SidebarLink>
@@ -208,10 +208,10 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <CodeIcon />
         <SidebarLabel>Developers</SidebarLabel>
       </SidebarLink>
-      <SidebarLink to="/register">
+      {/* <SidebarLink to="/register">
         <ModeEditOutlineIcon />
         <SidebarLabel>Register</SidebarLabel>
-      </SidebarLink>
+      </SidebarLink> */}
       <SidebarLink to="/login">
         <LoginIcon />
         <SidebarLabel>Login</SidebarLabel>

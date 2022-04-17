@@ -66,6 +66,10 @@ const App = () => {
           <Route path="Dashboardtable" element={<DashTable />} />
           <Route path="Manage" element={<Manage />} />
           <Route
+            path="Register1"
+            element={<PrivateRoute component={Register} />}
+          />
+          <Route
             path="dashboard"
             element={<PrivateRoute component={Dashboard} />}
           />
