@@ -92,7 +92,24 @@ export const deletePost = (id) => async (dispatch) => {
 export const addPost = (formData) => async (dispatch) => {
   try {
     const res = await api.post('/posts', formData);
+    dispatch({
+      type: ADD_POST,
+      payload: res.data
+    });
 
+    dispatch(setAlert('Post Created', 'success'));
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+// Add post Anonymous
+export const addPostAnonymous = (formData) => async (dispatch) => {
+  try {
+    const res = await api.post('/postsAnonymous', formData);
     dispatch({
       type: ADD_POST,
       payload: res.data

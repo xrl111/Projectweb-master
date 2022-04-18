@@ -70,7 +70,19 @@ const Anonymous = styled.input`
 const Btn = styled.div``
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("")
-
+  const [check, setCheck] = useState(false)
+  const onSubmit= (e)=>{
+    e.preventDefault()
+    if (check){
+      
+    }else{
+      addPost({ text })
+      setText("")
+    } 
+  }
+  const onClick =(e)=>{
+    setCheck(true);
+  }
   return (
     <>
       <Main>
@@ -84,11 +96,7 @@ const PostForm = ({ addPost }) => {
             <h3>Say Something...</h3>
           </div> */}
         <Form
-          onSubmit={(e) => {
-            e.preventDefault()
-            addPost({ text })
-            setText("")
-          }}
+          onSubmit={onSubmit}
         >
           <Textarea
             name="text"
@@ -113,7 +121,7 @@ const PostForm = ({ addPost }) => {
           /> */}
           <Btn>
             <Button type="submit" value="Submit" />
-            <Anonymous type="submit" value="Anomymus" />
+            <Anonymous type="submit" value="Anomymus" onClick={onClick}/>
           </Btn>
         </Form>
 

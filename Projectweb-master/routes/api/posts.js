@@ -47,46 +47,6 @@ router.post(
     }
   }
 );
-
-// @route    POST api/posts
-// @desc     Create a post anonymous
-// @access   Private
-router.post(
-  '/anonymouse',
-  auth,
-  check('text', 'Text is required').notEmpty(),
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
-    try {
-      const user = await User.findById(req.user.id).select('-password');
-
-      const newPost = new Post({
-        text: req.body.text,
-        name: "Anonymouse",
-        avatar: user.avatar,
-        user: req.user.id
-      });
-
-      const post = await newPost.save();
-
-      res.json(post);
-      await Nodemailer(user.email)
-      .then((result) => {
-        console.log("Email sent...", result);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  }
-);
 // @route    GET api/posts
 // @desc     Get all posts
 // @access   Private

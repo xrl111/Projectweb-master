@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Social network for developers",
   "main": "server.js",
+  "engines": {
+    "node": "16.14.0"
+  },
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
@@ -10,7 +13,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brad Traversy",
+  "author": "Bui Duc Lan",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
