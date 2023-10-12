@@ -1,5 +1,4 @@
 # Projectweb-master
-After completing the course you may want to look through this branch and play about with the changes.
 
 ## Changes to GitHub API authentication
 
